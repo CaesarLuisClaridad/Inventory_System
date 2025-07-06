@@ -1,4 +1,7 @@
-import mongoose from 'mongoose'
+ 
+//function for connecting to database
+
+import mongoose from "mongoose";
 
 export const connectDatabase = () => {
 
@@ -8,8 +11,6 @@ export const connectDatabase = () => {
     if(process.env.NODE_ENV === "PRODUCTION") DB_URI = process.env.DB_URI
 
     mongoose.connect(DB_URI).then((con) => {
-        console.log(`Connected to localhost: ${con.connection.host}`);
-        
+        console.log(`Connected to database: ${con.connection.host}`)
     })
-
 }
